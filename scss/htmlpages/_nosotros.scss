@@ -1,0 +1,35 @@
+@import "utilidades/variables.scss";
+@import "utilidades/extend.scss";
+@import "utilidades/mixin.scss";
+
+.main-nosotros {
+    @include tamaño(100%, 40rem);
+    @include flex(flex, column, center, center);
+
+    .nosotros-titulo {
+        padding: $unr;
+        margin: 1rem 3rem 1rem 3rem;
+        @include fuentes($fuente-helveticafuerte, 400, 3rem);
+        text-transform: uppercase;
+
+        @include mobile {
+            @include fuentes($fuente-helveticafuerte, 500, 1rem);
+            text-transform: uppercase;
+            text-align: center;
+        }
+    }
+
+    .nosotros-parrafo {
+        padding: $dosr;
+        margin: 1rem 3rem 1rem 3rem;
+        @include fuentes($fuente-helveticafuerte, 300, 1rem);
+        text-align: justify;
+
+        @include mobile {
+            @include fuentes($fuente-helveticafuerte, 300, auto);
+            margin: 0.5rem 3rem 0.5rem 3rem;
+            overflow: scroll;
+
+        }
+    }
+}
