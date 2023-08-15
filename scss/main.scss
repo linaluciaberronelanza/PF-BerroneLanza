@@ -6,7 +6,7 @@
 @import "htmlpages/contacto";
 @import "htmlpages/mapa";
 @import "htmlpages/nosotros";
-@import "htmlpages/proyectos";
+@import "htmlpages/productos";
 
 /*RESET*/
 body {
@@ -50,164 +50,189 @@ body {
         }
     }
 
-
     main {
         .carousel-posicion {
             width: 100%;
         }
 
-        .cajitas-contenedor {
-            @include tamaño (90rem, 30rem);
-            @include margen (3rem 0rem 3rem 0rem, "");
-            @extend %grid-cajitas;
-
+        .proyectos-imagenes {
+            display: grid;
+            @include margen(1rem 3rem 5rem 3rem, $dosr);
+            column-gap: $unr;
+            row-gap: $unr;
 
             @include desktop {
-                width: 100%;
-                @include flex (flex, "", space-around, "");
-                grid-template-columns: 1;
-                column-gap: 1rem;
+                grid-template-columns: repeat(6, 1fr);
+                grid-template-rows: repeat(3, 20rem);
             }
 
             @include notebook {
-                width: 100%;
-                @include flex (flex, "", space-around, "");
-                grid-template-columns: 1;
-                column-gap: 1rem;
+                grid-template-columns: repeat(6, 1fr);
+                grid-template-rows: repeat(3, 20rem);
             }
 
             @include tablet {
-                width: 100%;
-                @include flex (flex, "", space-around, "");
-                grid-template-columns: 1;
-                column-gap: 1rem;
+                grid-template-columns: repeat(6, 1fr);
+                grid-template-rows: repeat(3, 20rem);
             }
 
             @include mobile {
-                @include tamaño (100%, 80rem);
-                grid-template-columns: 1;
-                @include flex (flex, column, center, center);
-                flex-wrap: nowrap;
-                row-gap: 1rem;
+                grid-template-columns: repeat(1fr);
             }
 
-            .cajitahija {
-
+            .img-uno {
                 @include desktop {
-                    @include tamaño(40rem, 30rem);
-                    border-radius: 8px;
-                    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
-                    overflow: hidden;
-                    text-align: center;
-                    transition: all 0.25s;
+                    @include griduso(span 2, 1);
                 }
 
                 @include notebook {
-                    @include tamaño(40rem, 30rem);
-                    border-radius: 8px;
-                    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
-                    overflow: hidden;
-                    text-align: center;
-                    transition: all 0.25s;
+                    @include griduso(span 2, 1);
                 }
 
                 @include tablet {
-                    @include tamaño(30rem, 30rem);
-                    border-radius: 8px;
-                    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
-                    overflow: hidden;
-                    text-align: center;
-                    transition: all 0.25s;
-                }
-
-                @include mobile {
-                    grid-column: 1;
-                    width: 20rem;
-                    border-radius: 8px;
-                    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
-                    overflow: hidden;
-                    text-align: center;
-                    transition: all 0.25s
-                }
-
-                img {
-                    @include desktop {
-                        @include tamaño(40rem, 20rem);
-                        @include posicion(cover, 20%);
-                    }
-
-                    @include notebook {
-                        @include tamaño(40rem, 20rem);
-                        @include posicion(cover, 20%);
-                    }
-
-                    @include tablet {
-                        @include tamaño(30rem, 20rem);
-                        @include posicion(cover, 20%);
-                    }
-
-                    @include mobile {
-                        @include tamaño(20rem, 20rem);
-                        @include posicion(cover, 20%);
-                    }
-                }
-
-                h3 {
-                    @include desktop {
-                        @include fuentes($fuente-helveticafuerte, $seisc, $uncir);
-                        margin: $cecir;
-                        text-transform: uppercase;
-                    }
-
-                    @include notebook {
-                        @include fuentes($fuente-helveticafuerte, $seisc, $uncir);
-                        margin: $cecir;
-                        text-transform: uppercase;
-                    }
-
-                    @include tablet {
-                        @include fuentes($fuente-helveticafuerte, $seisc, $uncir);
-                        margin: $cecir;
-                        text-transform: uppercase;
-                    }
-
-                    @include mobile {
-                        @include fuentes($fuente-helveticafuerte, $dosc, $unr);
-                        margin: $cecir;
-                        text-transform: uppercase;
-                    }
-                }
-
-                p {
-                    @include desktop {
-                        @include fuentes($fuente-helveticafuerte, $seisc, $unr);
-                        margin: $unr;
-                        @include textos(justify, "");
-                    }
-
-                    @include notebook {
-                        @include fuentes($fuente-helveticafuerte, $seisc, $unr);
-                        margin: $unr;
-                        @include textos(justify, "");
-                    }
-
-                    @include tablet {
-                        @include fuentes($fuente-helveticafuerte, $seisc, $unr);
-                        margin: $unr;
-                        @include textos(justify, "");
-                    }
-
-                    @include mobile {
-                        @include fuentes($fuente-helveticafuerte, $seisc, 0.9rem);
-                        margin: $unr;
-                        @include textos(justify, "");
-                    }
+                    @include griduso(span 2, 1);
                 }
             }
 
-        }
+            .img-dos {
+                @include desktop {
+                    @include gridusoampliado(3, 5, 2, "");
+                }
 
+                @include notebook {
+                    @include gridusoampliado(3, 5, 2, "");
+                }
+
+                @include tablet {
+                    @include gridusoampliado(3, 5, 2, "");
+                }
+            }
+
+            .img-tres {
+                @include desktop {
+                    @include gridusoampliado(1, 3, 2, 3);
+                }
+
+                @include notebook {
+                    @include gridusoampliado(1, 3, 2, 4);
+                }
+
+                @include tablet {
+                    @include gridusoampliado(1, 3, 2, 4);
+                }
+            }
+
+            .img-cuatro {
+                @include desktop {
+                    @include gridusoampliado(5, 7, 3, "");
+                }
+
+                @include notebook {
+                    @include gridusoampliado(5, 7, 3, "");
+                }
+
+                @include tablet {
+                    @include gridusoampliado(5, 7, 3, "");
+                }
+            }
+
+            .img-cinco {
+                @include desktop {
+                    @include gridusoampliado(4, 6, 1, "");
+                }
+
+                @include notebook {
+                    @include gridusoampliado(4, 6, 1, "");
+                }
+
+                @include tablet {
+                    @include gridusoampliado(4, 6, 1, "");
+                }
+            }
+
+            .img-seis {
+                display: none;
+
+                @include desktop {
+                    display: block;
+                    @include gridusoampliado(3, 5, 3, "");
+                }
+
+                @include notebook {
+                    display: block;
+                    @include gridusoampliado(3, 5, 3, "");
+                }
+
+                @include tablet {
+                    display: block;
+                    @include gridusoampliado(3, 5, 3, "");
+                }
+            }
+
+            .img-siete {
+                @include desktop {
+                    @include gridusoampliado(5, 7, 2, "");
+                }
+
+                @include notebook {
+                    @include gridusoampliado(5, 7, 2, "");
+                }
+
+                @include tablet {
+                    @include gridusoampliado(5, 7, 2, "");
+                }
+            }
+
+            .img-ocho {
+                display: none;
+
+                @include desktop {
+                    display: block;
+                    @include griduso(3, 1);
+                    object-position: top 20%;
+                }
+
+                @include notebook {
+                    display: block;
+                    @include griduso(3, 1);
+                    object-position: top 20%;
+                }
+
+                @include tablet {
+                    display: block;
+                    @include griduso(3, 1);
+                    object-position: top 20%;
+                }
+            }
+
+            .img-nueve {
+                display: none;
+
+                @include desktop {
+                    display: block;
+                    @include griduso(6, 1);
+                }
+
+                @include notebook {
+                    display: block;
+                    @include griduso(6, 1);
+                }
+
+                @include tablet {
+                    display: block;
+                    @include griduso(6, 1);
+                }
+            }
+
+            div {
+                img {
+                    @include tamaño(100%, 100%);
+                    @include posicion (cover, "");
+                }
+            }
+        }
     }
+
 
     // Footer tambien esta trabajado solo en esta pagina
 
